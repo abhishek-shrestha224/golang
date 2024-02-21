@@ -40,7 +40,6 @@ type Caramel struct {
 func (c *Caramel) Cost() float64 {
 	return c.coffee.Cost() + 1.0
 }
-
 func (c *Caramel) Description() string {
 	return c.coffee.Description() + ", Caramel"
 }
