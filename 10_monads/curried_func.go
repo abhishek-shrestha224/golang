@@ -9,8 +9,19 @@ func calculateVolume(length int) func(int) func(int) int {
 		}
 	}
 }
+
+func closure() func() int {
+	counter := 0
+	return func() int {
+		counter++
+		return counter
+	}
+}
+
 func main() {
-	// Example usage
 	volume := calculateVolume(4)(5)(6)
-	fmt.Println(volume) // Output: 120
+	fmt.Println(volume)
+	increaseCounter := closure()
+	increaseCounter()
+	fmt.Println((increaseCounter()))
 }
